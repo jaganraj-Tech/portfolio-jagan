@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="vanta-bg"></div>
+<header>
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo"></div>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-toggle" id="menu-toggle">
+      &#9776; <!-- Unicode hamburger icon -->
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const navItems = document.querySelectorAll(".nav-links li a");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Handle scrolling for nav links
+  navItems.forEach(link => {
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href");
+
+      // Only apply smooth scroll for the certifications link
+      if (targetId === '#certifications') {
+        event.preventDefault(); // Stop the default anchor jump
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+      // For other links, the default browser jump will occur.
+
+      navLinks.classList.remove("active"); // Close the mobile menu
+    });
+  });
+</script>
+
+<section id="home" class="hero">
+  
+  <div class="hero-content">
+    <h1><span class="glow">Full-Stack Developer</span> & <span class="bold">Designer</span></h1>
+    <p>Crafting <strong>modern</strong>, <strong>responsive</strong> websites with clean UI and powerful backends.</p>
+    <div class="btn-group">
+      <button class="btn" onclick="window.location.href='M JAGANRAJ (2).pdf'">
+        📄 Download CV
+      </button>
+     <button class="btn btn-glow" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+  📧 Contact Me
+</button>
+  
+    </div>
+  </div>
+</section>
+<section id="about" class="about">
+  <div class="about-container">
+     <h2>
+      
+      
+      
+      
+      
+       About Me</h2>
+    <div class="about-image">
+      <img src="assets/me.png" alt="Profile Picture" class="profile-pic" />
+    </div>
+    <div class="about-text">
+     
+      <p>
+        I'm a <strong>Full-Stack Developer & Designer</strong> passionate about crafting
+        modern, scalable, and user-centric web applications. I love transforming ideas into real,
+        interactive experiences with a focus on <em>clean code, responsive design, and robust backends</em>.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="skills" class="skills">
+  <h2>My Skills</h2>
+  <div class="skill-cards">
+   <!-- HTML5 -->
+<div class="skill-card">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5 Logo" style="width: 50px; height: 50px;" />
+  <span>HTML5</span>
+</div>
+
+<!-- CSS3 -->
+<div class="skill-card">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3 Logo" style="width: 50px; height: 50px;" />
+  <span>CSS3</span>
+</div>
+
+    <div class="skill-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo" style="width: 50px; height: 50px;" />
+      <span>JavaScript</span>
+    </div>
+    <div class="skill-card">
+      <img src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg" alt="AngularJS Logo" style="width: 50px; height: 50px;" />
+      <span>AngularJS</span>
+    </div>
+   <div class="skill-card">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java Logo" style="width: 50px; height: 50px;" />
+  <span>Java</span>
+</div>
+   <div class="skill-card">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Spring Boot Logo" style="width: 50px; height: 50px;" />
+  <span>Spring Boot</span>
+</div>
+
+    <div class="skill-card">
+      <img src="https://www.mysql.com/common/logos/mysql-logo.svg" alt="MySQL Logo" style="width: 50px; height: 50px;" />
+      <span>MySQL</span>
+    </div>
+    <div class="skill-card">
+  <img src="https://www.mongodb.com/assets/images/global/favicon.ico" 
+       alt="MongoDB Logo" 
+       style="width: 50px; height: 50px;" />
+  <span>MongoDB</span>
+</div>
+
+  
+ <!-- Git -->
+<div class="skill-card">
+  <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" style="width: 50px; height: 50px;" />
+  <span>Git</span>
+</div>
+
+<!-- GitHub -->
+<div class="skill-card">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub Logo" style="width: 50px; height: 50px;" />
+  <span>GitHub</span>
+</div>
+
+
+  </div>
+</section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+    <div class="project-card">
+  <p>Student Management System<br>A full-stack solution with <br>Spring Boot | Java | HTML | CSS | JS | MySQL</p>
+  <a href="https://github.com/jaganraj-Tech/student-management.git" target="_blank" class="view-btn">Source Code</a>
+</div>
+     <div class="project-card">
+  <p>Gym Product Showcase<br>A responsive product display using<br>HTML | CSS | JS</p>
+  <a href="https://github.com/jaganraj-Tech/Gym-Products-Showcase.git" target="_blank" class="view-btn">Source Code</a>
+</div>
+      <div class="project-card">
+  <p>Bike Inventory Management<br>A responsive inventory app<br>Angular.js | Spring Boot | Java | MySQL</p>
+  <a href="https://github.com/username/weather-dashboard-1" target="_blank" class="view-btn">Source Code</a>
+      </div> 
+    </div>
+  </section>
+
+<div>
+
+<section id="certifications" class="certifications">
+  <h2>My Certifications</h2>
+  <div class="certification-cards">
+
+    <div class="certification-card">
+      <img src="assets/1cert.png.png" alt="30 Days Master Class Web Developer">
+      <p>30 Days Master Class Web Developer<br>Issued: March 2023</p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/workshop-IOT-CLG.jpg" alt="">
+      <p>Workshop on Internet of Things (IoT) <br>Issued: Nov 2023</p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/AI-NM-cert.jpg" alt="">
+      <p>AI Fluency training on All About Ai <br>Issued: Dec 2023</p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/py-cert.jpg" alt="">
+      <p>The completion of Python 3.4.3 Training <br>Issued: Dec 2023</p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/java-tr-cert.jpg" alt="">
+      <p>
+      Completion of Java Programming Training <br>Issued: Jun 2024
+      </p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/4cert.png" alt="Front-End Development - HTML">
+      <p>Front-End Development - HTML<br>Issued:Aug 2024<br></p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/5cert.png" alt="Front-End Development - CSS">
+      <p>Front-End Development - CSS<br>Issued: Sep 2024<br></p>
+    </div>
+    <div class="certification-card">
+      <img src="assets/2cert.png.png" alt="Internship in Data Science and Machine Learning">
+      <p>Internship in Data Science and Machine Learning<br>Issued:Sep 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/M JAGANRAJ (2)_page-0001.jpg" alt="">
+      <p>3 hrs Boot Camp in Artificial Intelligence &Data Science <br>Issued:Oct 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/Synfig-tr.jpg" alt="">
+      <p>Completion of Synfig Training <br>Issued: Nov 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/java-business-tr.jpg" alt="">
+      <p>Java Business application Training <br>Issued: Nov 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/Android-tr.jpg" alt="">
+      <p>Android app using Kotlin Traning <br>Issued: Nov 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/hub-mastering seo.jpg" alt="">
+      <p>Mastering SEO <br>Issued: Nov 2024
+      </p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/event -web-app.jpg" alt="">
+      <p>Event-Web Application Training <br>Issued: Dec 2024</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/DataAnalytics-cert.jpg" alt="">
+      <p>Workshop on Data Analytics <br>Issued: Mar 2025</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/java-cert.jpg" alt="">
+      <p>Java Programming Fundamentals <br>Issued: Mar 2025</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/TECHADEMY-JAVA-CERT.jpg" alt="">
+      <p>Java-Full Stack <br>Issued: oct 2025
+      </p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/UC-GIT-GITHUB-CERT.jpg" alt="">
+      <p>GIT,GitLab,GitHub <br>Issued: Dec 2025</p>
+    </div>
+    <div class="certification-card hidden-cert">
+      <img src="assets/UC-HTML-CSS-CERT.jpg" alt="">
+      <p>Mastering HTML5 and CSS3 <br>Issued:Dec 2025</p>
+    </div>
+  </div>
+  <div class="view-more-container">
+    <button id="view-more-certs-btn" class="btn">View More Certificates</button>
+  </div>
+  <!-- Modal for Zoom-In -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close-button">&times;</button>
+      <img id="modal-img" alt="Zoomed Certificate">
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  // Modal functionality
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalText = document.getElementById('modal-text');
+  const certificationImgs = document.querySelectorAll('.certification-card img');
+  const closeButton = document.querySelector('.close-button');
+
+  const showModal = (imgSrc, altText) => {
+    modal.style.display = 'block';
+    modalImg.src = imgSrc;
+    modalText.textContent = altText;
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  };
+
+  certificationImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      showModal(img.src, img.alt);
+    });
+  });
+
+  closeButton.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      closeModal();
+    }
+  });
+
+  // View More Certificates
+  document.getElementById('view-more-certs-btn').addEventListener('click', function() {
+    var hiddenCerts = document.querySelectorAll('.hidden-cert');
+    hiddenCerts.forEach(function(cert) {
+      cert.classList.remove('hidden-cert');
+    });
+    this.style.display = 'none';
+    document.querySelector('.view-more-container').style.display = 'none';
+  });
+</script>
+<footer id="contact" class="contact-layout">
+  <div class="contact-column">
+    <h3>Contact Information</h3>
+    <div class="contact-info">
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="20">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jaganraj.m31@gmail.com">jaganraj.m31@gmail.com</a>
+      </p>
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" width="20">
+        +91 9087498096
+      </p>
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" width="20">
+        Chennai, Tamil Nadu
+      </p>
+    </div>
+  </div>
+
+  <div class="contact-column">
+    <h3>Social Links</h3>
+    <div class="social-links">
+      <div class="social-item">
+        <a href="https://www.linkedin.com/in/jaganrajtech/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+        </a>
+        <p>LinkedIn</p>
+      </div>
+
+      <div class="social-item">
+        <a href="https://github.com/jaganraj-Tech" target="_blank">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        </a>
+        <p>GitHub</p>
+      </div>
+
+      <div class="social-item">
+        <a href="https://www.instagram.com/jaganrajm/?next=%2F" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+        <p>Instagram</p>
+      </div>
+    </div>
+  </div>
+</footer>   
+
+
+
+  <footer>
+    <p>© 2025 JAGANRAJ M. All rights reserved.</p>
+  </footer>
+
+  <!-- Vanta.js Dependencies and Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+  <script>
+    VANTA.WAVES({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x06063d,
+      shininess: 71.00,
+      waveHeight: 23.05,
+      waveSpeed: 0.75,
+      zoom: 1.15,
+    });
+  
+  </script>
+
+</body>
+</html>
